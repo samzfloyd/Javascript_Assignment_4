@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math sticks</title>
+    <style>
+        .container{
+            display: flex;
+        }
+        .img{
+            height: 100px;
+
+        }
+        .sec_container{
+            margin-top: 20px;
+        }
+        #text1{
+            width: 20%;
+        }
+    </style>
+</head>
+<br>
+    <div id="main">
+    <div >
+        <h1 id="heading">MATHSTICK HOME</h1>
+        
+    </div>
+    <div id="container">
+        <!-- <img class="img" id="image"src="stick.png" alt=""> -->
+    </div>
+    <br class="sec_container">
+        <input id="text1" type="text" placeholder="Enter the number images you want"></br></br>
+        <button id="click_btn" onclick="image_copy()">Submit</button>
+    </div>
+    <script>
+        function image_copy(){
+            
+            let img_copy=document.createElement('img')
+            let container=document.getElementById("container")
+            let inp=document.getElementById('text1').value;
+            
+            
+        
+            let heading=document.getElementById("heading");
+            img_copy.className="img";
+            img_copy.src="stick.png";
+        
+            let total=5*Number(inp)+1;
+            if(inp==="1"){
+                heading.innerHTML="Number of sticks used : 1"
+            }else{
+                heading.innerHTML="Number of sticks used : "+total;
+            }
+            
+            let i=0;
+            for(let i=0;i<inp;i++){
+                
+                container.appendChild(img_copy.cloneNode(true))
+            }
+        }
+    
+    </script>
+</body>
+</html>
